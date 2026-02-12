@@ -1,0 +1,15 @@
+name: Optimizer
+main: io.github.githalt.optimizer.OptimizerPlugin
+version: 1.0-SNAPSHOT
+author: githalt
+description: A plugin who wants your server lean and optimized!
+
+commands:
+  optimizer:
+    description: Main Optimizer command
+    usage: /optimizer
+    permission: optimizer.admin
+
+permissions:
+  optimizer.admin:
+    default: op

@@ -1,0 +1,46 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.9.22"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+group = "io.github.optimizer"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.mongodb:mongodb-driver-sync:4.11.1"
+    implementation "com.google.code.gson:gson:2.10.1"
+}
+
+build {
+    dependsOn shadowJar
+}
+
+jar {
+    enabled = false
+}
+
+shadowJar {
+    archiveClassifier.set("")
+    relocate "org.mongodb", "io.github.optimizer.libs.mongodb"
+    relocate "com.google.gson", "io.github.optimizer.libs.gson"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

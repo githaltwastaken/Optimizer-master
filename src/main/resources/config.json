@@ -1,0 +1,18 @@
+{
+  "mongodb": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "optimizer",
+    "username": "",
+    "password": ""
+  },
+  "cleaner": {
+    "enabled": true,
+    "intervalSeconds": 600,
+    "broadcastBeforeSeconds": 30,
+    "enableGarbageCollector": true
+  },
+  "chunk": {
+    "entityThreshold": 150
+  }
+}
