@@ -11,6 +11,7 @@ Configurable Intervals - Set cleanup frequency in seconds, minutes, or hours
 Database Support - MongoDB and JSON storage for cleanup history
 Detailed Analytics - Track up to 100 past cleanup operations with timestamps
 Easy Management - Simple commands for monitoring and configuration
+
 📋 Commands
 All commands require optimizer.admin permission.
 
@@ -27,28 +28,34 @@ Command Description
 /optimizer interval <time> <unit> Set cleanup interval (s/m/h)
 /optimizer reload Reload configuration
 /optimizer clearhistory Clear cleanup history
+
 Examples:
 
 /optimizer interval 30 minutes - Clean every 30 minutes
 /optimizer interval 2 hours - Clean every 2 hours
 /optimizer history 2 - View page 2 of history
+
 🎮 How It Works
 Scans all loaded worlds for removable entities
 Removes items, arrows, and old experience orbs
 Optimizes memory and unloads unused chunks
 Logs every operation with UUID, timestamp, and stats
 Schedules next automatic cleanup
+
 📦 Requirements
 Minecraft: 1.8.x - 1.20.x (Spigot/Paper/Purpur)
 Java: 11+
 Database: MongoDB 3.6+ or JSON file storage
+
 🔐 Permissions
 optimizer.admin - Access to all commands (default: op)
+
 🌐 Use Cases
 Survival Servers - Keep spawn areas clean
 Networks - Manage entities across multiple worlds
 Minigames - Force cleanup between rounds
 Performance - Maintain consistent TPS during peak hours
+
 ⭐ Why Optimizer?
 ✅ Multi-version support (1.8 - 1.20+)
 ✅ Lightweight and efficient
